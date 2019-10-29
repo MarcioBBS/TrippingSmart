@@ -1,10 +1,14 @@
-@import "base";
-@import "components";
-@import "layout";
-@import "mixins";
-@import "typography";
-@import "variables";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
+@import "base/base";
+@import "base/typography";
 
+@import "components/galery";
+@import "components/search";
 
+@import "layout/hotel-view";
+@import "layout/navigation";
+@import "layout/side-navigation";
 
+@import "pages/home";
