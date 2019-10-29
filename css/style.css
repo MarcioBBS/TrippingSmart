@@ -13,6 +13,17 @@
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(var(--color-black), .3); }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 1rem 4rem rgba(var(--color-black), 0.3); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
 * {
   margin: 0;
   padding: 0; }
@@ -46,6 +57,24 @@ body {
   line-height: 1.6;
   color: var(--color-grey-dark-2); }
 
+.btn {
+  border: none;
+  font-size: inherit; }
+  .btn-inline {
+    color: var(--color-primary);
+    border-bottom: 1px solid currentColor;
+    padding: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s;
+    backface-visibility: hidden; }
+    .btn-inline:hover {
+      color: var(--color-grey-dark-1); }
+    .btn-inline:focus {
+      border: none;
+      animation: pulsate 1s infinite; }
+
 .gallery {
   display: flex; }
   .gallery__item {
@@ -73,6 +102,55 @@ body {
     transform: translate(-50%, -60%); }
   .gallery__item:hover .gallery__photo {
     filter: brightness(30%); }
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2); }
+  .overview__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem; }
+  .overview__stars {
+    /*
+        Setting the margin property on a flex child will push the child away from that direction. 
+        Set margin-left to auto, the child will push right. Set margin-top to auto and the child 
+        will push to the bottom.
+
+        https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins
+        https://hackernoon.com/flexbox-s-best-kept-secret-bd3d892826b6
+        */
+    margin-right: auto;
+    display: flex; }
+  .overview__icon-star, .overview__icon-location {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: var(--color-primary); }
+  .overview__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center; }
+  .overview__icon-location {
+    margin-left: .5rem; }
+  .overview__rating {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-left: 3rem;
+    padding: 0 2.25rem;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .overview__rating-average {
+      font-size: 2.25rem;
+      font-weight: 300;
+      margin-bottom: -3px; }
+    .overview__rating-count {
+      font-size: .8rem;
+      text-transform: uppercase; }
 
 .search {
   flex: 0 0 40%;
@@ -211,7 +289,7 @@ body {
   font-size: 1.4rem;
   height: 7rem;
   background-color: var(--color-white);
-  border-bottom: var(--color-grey-light-2);
+  border-bottom: 1px solid var(--color-grey-light-2);
   display: flex;
   justify-content: space-between;
   align-items: center; }
