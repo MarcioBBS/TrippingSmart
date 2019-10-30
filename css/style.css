@@ -64,8 +64,12 @@ body {
 
 .btn {
   border: none;
-  font-size: inherit; }
+  cursor: pointer; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
   .btn-inline {
+    font-size: inherit;
     color: var(--color-primary);
     border-bottom: 1px solid currentColor;
     padding: 2px;
@@ -81,9 +85,42 @@ body {
       color: var(--color-grey-dark-1); }
       .btn-inline:hover span {
         margin-left: .8rem; }
-    .btn-inline:focus {
-      border: none;
-      animation: pulsate 1s infinite; }
+  .btn-cta {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden; }
+    .btn-cta:hover {
+      background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+    .btn-cta > * {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      transition: all .3s; }
+    .btn-cta__visible {
+      padding: 2rem 7.5rem; }
+    .btn-cta__invisible {
+      position: absolute;
+      left: 0;
+      top: -100%;
+      padding: 2rem 0; }
+    .btn-cta:hover .btn-cta__visible {
+      transform: translateY(100%); }
+    .btn-cta:hover .btn-cta__invisible {
+      top: 0; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
 
 .gallery {
   display: flex; }
