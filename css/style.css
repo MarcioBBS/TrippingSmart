@@ -66,8 +66,7 @@ body {
   border: none;
   cursor: pointer; }
   .btn:focus {
-    outline: none;
-    animation: pulsate 1s infinite; }
+    outline: none; }
   .btn-inline {
     font-size: inherit;
     color: var(--color-primary);
@@ -75,9 +74,7 @@ body {
     padding: 2px;
     display: inline-block;
     background-color: transparent;
-    cursor: pointer;
-    transition: all .3s;
-    backface-visibility: hidden; }
+    transition: all .3s; }
     .btn-inline span {
       margin-left: 3px;
       transition: margin-left .2s; }
