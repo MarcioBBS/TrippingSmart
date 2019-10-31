@@ -9,6 +9,12 @@
     align-items: center;
     justify-content: center;
 
+    @include respond(phone-medium) {
+        order: 1;
+        flex-basis: 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -47,6 +53,10 @@
 
         &:active {
             transform: translateY(.3rem);
+
+            @include respond(phone-medium) {
+                transform: translateY(.2rem);
+            }
         }
     }
 

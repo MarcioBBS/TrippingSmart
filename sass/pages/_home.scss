@@ -5,6 +5,12 @@
 
     min-height: 45rem;
 
+    @include respond(tab-land) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
 }
 
 .header {
@@ -16,10 +22,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(phone-medium) {
+        flex-wrap: wrap;
+        height: 12rem;
+    }
 }
 
 .content {
     display: flex;
+
+    @include respond(med-desktop) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
