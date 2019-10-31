@@ -14,6 +14,11 @@
             font-size: 1.8rem;
             padding: 1.25rem 2rem;
         }
+
+        @include respond(phone-medium) {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
     }
 
     &__stars {
@@ -27,6 +32,11 @@
         */
         margin-right: auto;
         display: flex; // align the start vertical centered
+
+        @include respond(phone-medium) {
+            //order: 1;
+            margin-right: 0;
+        }
     }
 
     &__icon-star,
@@ -40,6 +50,10 @@
         font-size: 1.2rem;
         display: flex;
         align-items: center;
+
+        @include respond(phone-medium) {
+            margin-left: auto;
+        }
     }
 
     &__icon-location {
@@ -57,6 +71,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @include respond(phone-medium) {
+            margin-left: 1.5rem;
+        }
 
         @include respond(phone) {
             padding: 0 1.5rem;   
