@@ -1,0 +1,104 @@
+.overview {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--line-2);
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+
+        @include respond(phone) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
+
+        @include respond(phone-medium) {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+    }
+
+    &__stars {
+        /*
+        Setting the margin property on a flex child will push the child away from that direction. 
+        Set margin-left to auto, the child will push right. Set margin-top to auto and the child 
+        will push to the bottom.
+
+        https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins
+        https://hackernoon.com/flexbox-s-best-kept-secret-bd3d892826b6
+        */
+        margin-right: auto;
+        display: flex; // align the start vertical centered
+
+        @include respond(phone-medium) {
+            //order: 1;
+            margin-right: 0;
+        }
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.8rem;
+        height: 1.8rem;
+        fill: var(--color-primary);
+    }
+
+    &__location{
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+
+        @include respond(phone-medium) {
+            margin-left: auto;
+        }
+    }
+
+    &__icon-location {
+        margin-left: .5rem;
+    }
+    
+    &__rating {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        margin-left: 3rem;
+        padding: 0 2.25rem;
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(phone-medium) {
+            margin-left: 1.5rem;
+        }
+
+        @include respond(phone) {
+            padding: 0 1.5rem;   
+        }
+        
+
+        &-average {
+            font-size: 2.25rem;
+            font-weight: 300;
+            margin-bottom: -3px;
+
+            @include respond(phone) {
+                font-size: 1.7;
+            }
+        }
+
+        &-count {
+            font-size: .8rem;
+            text-transform: uppercase;
+
+            @include respond(phone) {                
+                text-align: center;
+            }
+        }
+    }
+
+}

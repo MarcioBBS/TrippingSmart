@@ -1,0 +1,38 @@
+.gallery {
+    display: flex;
+    
+    
+    &__item {
+        position: relative;
+        overflow: hidden;
+        
+    }
+
+    &__photo {
+        width: 100%;
+        display: block;
+        transition:  filter .5s;
+    }
+
+    &__caption {
+        @include absolute-center;
+        transform: translate(-50%, 30%);
+        color: var(--color-white);
+        font-size: 2rem;
+        font-weight: 300;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+    
+    &__item:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -60%);
+    }
+
+    &__item:hover &__photo {
+        filter: brightness(30%);
+    }
+
+}
