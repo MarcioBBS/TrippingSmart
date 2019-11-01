@@ -15,5 +15,10 @@
         @include respond(phone-medium){
             font-size: 1.5rem;
         }
+
+        @include respond(phone-small) {
+            padding: 3rem;
+            font-weight: 400;
+        }
     }
 }
