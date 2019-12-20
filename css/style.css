@@ -173,7 +173,10 @@ body {
   display: flex; }
   .gallery__item {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    transition: all 1s; }
+    .gallery__item:hover {
+      transform: scale(1.1); }
   .gallery__photo {
     width: 100%;
     display: block;
@@ -369,14 +372,14 @@ body {
       height: 1rem;
       width: 1rem;
       margin-right: .7rem;
-      background-image: url(../../img/chevron-thin-right.svg);
+      background-image: url(../img/chevron-thin-right.svg);
       background-size: cover; }
       @supports (-webkit-mask-image: url()) or (mask-image: url()) {
         .list__item::before {
           background-color: var(--color-primary);
-          -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+          -webkit-mask-image: url(../img/chevron-thin-right.svg);
           -webkit-mask-size: cover;
-          mask-image: url(../../img/chevron-thin-right.svg);
+          mask-image: url(../img/chevron-thin-right.svg);
           mask-size: cover;
           background-image: none; } }
 
